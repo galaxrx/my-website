@@ -1,3 +1,6 @@
+'use client';
+
+import { Suspense } from 'react';
 import Hero from "./sections/Hero";
 import WhyGalaxrxSection from "./sections/WhyGalaxrxSection";
 import SolutionsSection from "./sections/SolutionsSection";
@@ -6,18 +9,20 @@ import AboutSection from "./sections/AboutSection";
 import ContactSection from "./sections/ContactSection";
 import ParticlesBackground from "./components/ParticlesBackground";
 
-export default function Home() {
+export default function Page() {
   return (
-    <>
-      <ParticlesBackground />
-      <div className="relative z-10">
-        <Hero />
-        <WhyGalaxrxSection />
-        <SolutionsSection />
-        <ResultsSection />
-        <AboutSection />
-        <ContactSection />
-      </div>
-    </>
+    <Suspense fallback={null}>
+      <>
+        <ParticlesBackground />
+        <div className="relative z-10">
+          <Hero />
+          <WhyGalaxrxSection />
+          <SolutionsSection />
+          <ResultsSection />
+          <AboutSection />
+          <ContactSection />
+        </div>
+      </>
+    </Suspense>
   );
 }
