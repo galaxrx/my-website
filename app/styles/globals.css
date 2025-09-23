@@ -1,0 +1,59 @@
+/* globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-h: 88px;
+    scroll-padding-top: var(--header-h);
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --header-h: 76px;
+    }
+  }
+ 
+  .dark {
+    --background: 215 44% 6%;      /* #0B1220 */
+    --foreground: 216 60% 94%;      /* #E6F0FF */
+    --ring: var(--accent);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* --- ADDED THIS NEW RULE --- */
+@layer components {
+  /* Applies a default "card" style to all sections that are NOT the hero */
+  section:not(#hero) {
+    @apply mx-auto my-16 max-w-7xl rounded-2xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-lg sm:p-12;
+  }
+}
