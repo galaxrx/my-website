@@ -3,9 +3,12 @@ import { Inter, Sora } from "next/font/google";
 import { cn } from "./cn";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
-import Analytics from "./components/Analytics";
 import "./styles/globals.css";
 import { Suspense } from "react";
+import dynamic from 'next/dynamic';
+
+// load Analytics only on the client
+const Analytics = dynamic(() => import('./components/Analytics'), { ssr: false });
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -60,7 +63,9 @@ export default function RootLayout({
           fontSora.variable
         )}
       >
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <SiteHeader />
         <main className="relative flex flex-col items-center">
             {children}
