@@ -7,7 +7,7 @@ import "./styles/globals.css";
 import { Suspense } from "react";
 import dynamic from 'next/dynamic';
 
-// load Analytics only on the client
+// Load Analytics only on the client (no SSR)
 const Analytics = dynamic(() => import('./components/Analytics'), { ssr: false });
 
 const fontInter = Inter({
