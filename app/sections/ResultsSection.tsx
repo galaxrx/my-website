@@ -73,7 +73,7 @@ const outcomes = [
 
 const measurements = [
     { label: "Service Level", value: "98.7%", desc: "Demand fulfilled without stockout.", type: 'progress_ring' },
-    { label: "Forecast Quality", value: "+25%", desc: "Improvement in WMAPE.", type: 'sparkline' },
+    { label: "Forecast Quality", value: "+25%", desc: "Improvement in Accuracy.", type: 'sparkline' },
     { label: "Cash Conversion", value: "18 Days", desc: "From 30 days to 18.", type: 'shrinking_bar' },
     { label: "Stock Health", value: "-41%", desc: "Reduction in overstock value.", type: 'progress_ring'},
     { label: "Margin Realization", value: "+12.5%", desc: "Actual vs. planned margin lift.", type: 'sparkline'},

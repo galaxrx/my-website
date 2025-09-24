@@ -88,8 +88,8 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-6"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } } }}
            >
-            <StatCard value={30} label="Stockout Reduction" />
-            <StatCard value={40} label="Margin Increase" />
+            <StatCard value={30} label="Inventory Cost Reduction" />
+            <StatCard value={40} label="Service Level Increase" />
           </motion.div>
 
           <motion.div
